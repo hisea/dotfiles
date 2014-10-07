@@ -4,11 +4,18 @@ DIR_MAPPING = {
   "#{Dir.pwd}/vim" => "#{ENV['HOME']}/.vim"
 }
 
+
+task install: [
+  :git_sub_init, 
+  :git_sub_update,
+  :link_dir, 
+  :link_file
+]
+  
 desc "Link the dot files into user's home directory"
 task :link_file do
   files = Dir.glob("**/*.symlink")
   files.each do |file|
-    puts file
     link_file(file)
   end
 end
@@ -20,8 +27,13 @@ task :link_dir do
   end
 end
 
-desc "Init and update all git submodules recursively"
+desc "Init git submodules"
 task :git_sub_init do
+  system %Q{git submodule init}
+end
+
+desc "Update all git submodules recursively"
+task :git_sub_update do
   system %Q{git submodule update --init --recursive}
 end
 
@@ -50,5 +62,6 @@ def link_dir(src, dest)
     puts "backing up #{dest} to .#{dest}.backup"
     system %Q{mv -f  "#{dest}" "#{dest}.backup"}
   end
-  system %Q{ln -sf #{src} "#{dest}"}
+  puts "linking #{src} to #{dest}"
+  system %Q{ln -sf "#{src}" "#{dest}"}
 end
