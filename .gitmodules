@@ -1,3 +1,6 @@
 [submodule "vim"]
 	path = vim
 	url = git@github.com:hisea/dotvim.git
+[submodule "omzsh-custom"]
+	path = omzsh-custom
+	url = git@github.com:hisea/omzsh-custom.git
