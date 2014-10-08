@@ -10,7 +10,7 @@ set -g history-limit 10000
 
 # set Ctrl-a as the default prefix key combination
 # and unbind C-b to free it up
-set -g prefix C-a
+set -g prefix C-s
 unbind C-b
 
 # use send-prefix to pass C-a through to application

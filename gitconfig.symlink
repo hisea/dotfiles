@@ -16,7 +16,7 @@
 [core]
   whitespace = error,trailing-space,cr-at-eol,-blank-at-eof,tab-in-indent
   excludesfile = .gitignore.local
-  editor = /usr/bin/vim
+  editor = /usr/local/bin/vim
   pager = /usr/bin/less -XRS -x4
 [color "diff"]
   whitespace = red reverse
@@ -24,8 +24,6 @@
   name = Yinghai Zhao
   email = zyinghai@gmail.com
 [gui]
-  fontui   = -family Inconsolata -size 14 -weight normal -slant roman -underline 0 -overstrike 0
-  fontdiff = -family Inconsolata -size 14 -weight normal -slant roman -underline 0 -overstrike 0
 [push]
   default = simple
 [grep]
@@ -61,16 +59,11 @@
   autosetuprebase = always
 [hooks "pre-commit"]
   enabled = true
-  whitespace-rb = true
 [hooks "post-checkout"]
   enabled = true
-  update-submodules-rb = true
-  check-bundle-rb = true
 [hooks "post-merge"]
   enabled = true
-  update-submodules-rb = true
-  check-bundle-rb = true
 [tig]
-  show-date = relative
-  line-graphics = utf8
+  ;show-date = relative
+  line-graphics = default ;utf-8
   tab-size = 4
