@@ -10,7 +10,7 @@ set -g history-limit 10000
 
 # set Ctrl-a as the default prefix key combination
 # and unbind C-b to free it up
-set -g prefix C-s
+set -g prefix C-a
 unbind C-b
 
 # use send-prefix to pass C-a through to application
@@ -18,6 +18,9 @@ bind C-a send-prefix
 
 # shorten command delay
 set -sg escape-time 1
+
+# disable auto renaming of windows
+set-window-option -g automatic-rename off
 
 # set window and pane index to 1 (0 by default)
 set-option -g base-index 1
