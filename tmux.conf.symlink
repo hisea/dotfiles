@@ -119,7 +119,7 @@ set-window-option -g window-status-current-attr bright
 
 # show host name and IP address on left side of status bar
 set -g status-left-length 100
-set -g status-left "#[fg=green]:: #S #I:#P :: #[fg=brightblue] Ⓦ #(curl icanhazip.com) #[fg=red]#(ifconfig tun0 | grep 'inet ' | awk '{print \"vpn \" $2}') "
+set -g status-left "#[bg=colour235]#[fg=green]:: #S #I:#P :: #[fg=brightblue] Ⓦ #(curl icanhazip.com) #[fg=red]#(ifconfig tun0 | grep 'inet ' | awk '{print \"vpn \" $2}') "
 
 # show session name, window & pane number, date and time on right side of
 # status bar
