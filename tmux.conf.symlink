@@ -16,6 +16,9 @@ unbind C-b
 # use send-prefix to pass C-a through to application
 bind C-a send-prefix
 
+# enable title
+set-option -g set-titles on
+
 # shorten command delay
 set -sg escape-time 1
 
