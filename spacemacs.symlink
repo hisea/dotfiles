@@ -2,10 +2,6 @@
 ;; This file is loaded by Spacemacs at startup.
 ;; It must be stored in your home directory.
 
-(setq-default dotspacemacs-configuration-layers '(themes-megapack))
-(setq-default dotspacemacs-configuration-layers '(auto-completion))
-
-
 (defun dotspacemacs/layers ()
   "Configuration Layers declaration."
   (setq-default
@@ -20,6 +16,7 @@
      ;; Example of useful layers you may want to use right away
      ;; Uncomment a layer name and press C-c C-c to install it
      ;; --------------------------------------------------------
+     osx
      auto-completion
      themes-megapack
      markdown
@@ -57,12 +54,12 @@ before layers configuration."
    ;; directory. A string value must be a path to a .PNG file.
    ;; If the value is nil then no banner is displayed.
    ;; dotspacemacs-startup-banner 'official
-   dotspacemacs-startup-banner 'official
+   dotspacemacs-startup-banner 'random
    ;; t if you always want to see the changelog at startup
    dotspacemacs-always-show-changelog t
    ;; List of items to show in the startup buffer. If nil it is disabled.
    ;; Possible values are: `recents' `bookmarks' `projects'."
-   dotspacemacs-startup-lists '(recents projects)
+   dotspacemacs-startup-lists '(recents projects bookmarks)
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
@@ -74,7 +71,7 @@ before layers configuration."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Liberation Mono For Powerline"
+   dotspacemacs-default-font '("Liberation Mono"
                                :size 14
                                :weight normal
                                :width normal
@@ -151,7 +148,8 @@ before layers configuration."
 layers configuration."
   (setq powerline-default-separator 'nil)
   (global-auto-complete-mode)
-  ;;(setq-default ruby-enable-ruby-on-rails-support t)
+  (global-hl-line-mode -1)
+  (setq-default ruby-enable-ruby-on-rails-support t)
 )
 
 
