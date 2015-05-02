@@ -24,6 +24,7 @@
      syntax-checking
      erlang-elixir
      ruby
+     html
      ;; better-defaults
      (git :variables
           git-gutter-use-fringe t)
