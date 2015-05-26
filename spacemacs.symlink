@@ -148,6 +148,7 @@ before layers configuration."
   "Configuration function.
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
+  (setq js-indent-level 2)
   (setq powerline-default-separator 'nil)
   (global-auto-complete-mode)
   (global-hl-line-mode -1)
