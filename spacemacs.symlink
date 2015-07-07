@@ -23,9 +23,10 @@
      org
      syntax-checking
      javascript
-     erlang-elixir
+     elixir
      ruby
      html
+     git
      ;; better-defaults
      (git :variables
           git-gutter-use-fringe t)
@@ -65,7 +66,8 @@ before layers configuration."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(underwater
+   dotspacemacs-themes '(spacemacs-dark
+                         underwater
                          leuven
                          monokai
                          zenburn)
@@ -148,6 +150,9 @@ before layers configuration."
   "Configuration function.
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
+  (setq js2-basic-offset 2)
+  (setq web-mode-code-indent-offset 2)
+  (setq web-mode-markup-indent-offset 2)
   (setq js-indent-level 2)
   (setq powerline-default-separator 'nil)
   (global-auto-complete-mode)
