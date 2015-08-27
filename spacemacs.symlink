@@ -27,6 +27,8 @@
      ruby
      html
      git
+     github
+     version-control
      ;; better-defaults
      (git :variables
           git-gutter-use-fringe t)
