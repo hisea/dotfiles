@@ -52,11 +52,11 @@ end
 
 def backup_file(file)
   return unless File.exist?(file)
-  if File.symlink?("#{ENV['HOME']}/.#{file}")
+  if File.symlink?(file)
     puts "relinking .#{file}"
   else
-    puts "backing up .#{file} to .#{file}.backup"
-    system %( mv -f "$HOME/.#{file}" "$HOME/.#{file}.backup" )
+    puts "backing up #{file} to #{file}.backup"
+    system %( mv -f "#{file}" "#{file}.backup" )
   end
 end
 
@@ -71,6 +71,7 @@ end
 def link_dir(src, dest)
   if File.exist?(dest) && !File.symlink?(dest)
     puts "backing up #{dest} to .#{dest}.backup"
+    system %( rm -rf  "#{dest}.backup" )
     system %( mv -f  "#{dest}" "#{dest}.backup" )
   end
   puts "linking #{src} to #{dest}"
