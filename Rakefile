@@ -6,6 +6,10 @@ DIR_MAPPING = {
   "#{Dir.pwd}/omzsh-custom" => "#{ENV['HOME']}/.oh-my-zsh/custom"
 }
 
+FILE_MAPING = {
+  "#{Dir.pwd}/init.fish" => "#{ENV['HOME']}/.config/omf/init.fish",
+}
+
 task install: [
   :git_sub_init,
   :git_sub_update,
@@ -18,6 +22,9 @@ task :link_files do
   files = Dir.glob('**/*.symlink')
   files.each do |file|
     link_file(file)
+  end
+  FILE_MAPING.each do |src, dest|
+    link_single_file(src, dest)
   end
 end
 
@@ -56,9 +63,9 @@ end
 def link_file(file)
   link_name = file.split('/').last
   link_name.slice! '.symlink'
-  backup_file link_name
-  puts "linking ~/.#{link_name}"
-  system %( ln -sf "$PWD/#{file}" "#{ENV['HOME']}/.#{link_name}" )
+  src = "$PWD/#{file}"
+  dest = "#{ENV['HOME']}/.#{link_name}"
+  link_single_file(src, dest)
 end
 
 def link_dir(src, dest)
@@ -68,5 +75,11 @@ def link_dir(src, dest)
   end
   puts "linking #{src} to #{dest}"
   system %( rm -rf "#{dest}" )
+  system %( ln -sf "#{src}" "#{dest}" )
+end
+
+def link_single_file(src, dest)
+  backup_file dest
+  puts "linking #{dest}"
   system %( ln -sf "#{src}" "#{dest}" )
 end
