@@ -16,8 +16,6 @@ unbind C-b
 # use send-prefix to pass C-a through to application
 bind C-a send-prefix
 
-# enable title
-set-option -g set-titles on
 
 # shorten command delay
 set -sg escape-time 1
@@ -60,6 +58,15 @@ setw -g mode-mouse off
 set -g mouse-select-pane off
 set -g mouse-resize-pane off
 set -g mouse-select-window off
+
+# ---------------------
+# Shell
+# ---------------------
+
+set-option -g default-shell /usr/local/bin/fish
+# enable title
+set-option -g set-titles on
+bind < set-option set-titles-string
 
 # ---------------------
 # Copy & Paste
