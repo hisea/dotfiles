@@ -29,6 +29,7 @@
      yaml
      html
      git
+     shell-scripts
      github
      version-control
      ;; better-defaults
