@@ -28,6 +28,7 @@
      ruby-on-rails
      yaml
      html
+     sql
      git
      shell-scripts
      github
@@ -165,6 +166,8 @@ before layers configuration."
   "Configuration function.
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
+  (setq-default tab-width 2)
+  (setq-default indent-tabs-mode nil)
   (setq js2-basic-offset 2)
   (setq web-mode-code-indent-offset 2)
   (setq web-mode-markup-indent-offset 2)

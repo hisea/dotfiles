@@ -66,7 +66,7 @@ set -g mouse-select-window off
 set-option -g default-shell /usr/local/bin/fish
 # enable title
 set-option -g set-titles on
-bind < set-option set-titles-string
+bind < command-prompt 'set-option set-titles-string %%'
 
 # ---------------------
 # Copy & Paste
