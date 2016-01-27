@@ -2,7 +2,3 @@
 	path = vim
 	url = git@github.com:hisea/dotvim.git
   ignore = dirty
-[submodule "omzsh-custom"]
-	path = omzsh-custom
-	url = git@github.com:hisea/omzsh-custom.git
-  ignore = dirty
