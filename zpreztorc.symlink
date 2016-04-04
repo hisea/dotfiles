@@ -62,6 +62,10 @@ zstyle ':prezto:load' pmodule \
   'osx' \
   'ssh' \
   'tmux' \
+  'rails' \
+  'ruby' \
+  'helper' \
+  'homebrew' \
 
 #
 # Editor

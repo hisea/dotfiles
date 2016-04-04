@@ -33,6 +33,7 @@
      shell-scripts
      github
      version-control
+     dockerfile
      ;; better-defaults
      (git :variables
           git-gutter-use-fringe t)
