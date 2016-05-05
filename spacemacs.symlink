@@ -34,6 +34,7 @@
      github
      version-control
      dockerfile
+     react
      ;; better-defaults
      (git :variables
           git-gutter-use-fringe t)
@@ -170,6 +171,8 @@ layers configuration."
   (setq-default tab-width 2)
   (setq-default indent-tabs-mode nil)
   (setq js2-basic-offset 2)
+  (setq js2-strict-missing-semi-warning nil)
+  (setq js2-missing-semi-one-line-override t)
   (setq web-mode-code-indent-offset 2)
   (setq web-mode-markup-indent-offset 2)
   (setq js-indent-level 2)
