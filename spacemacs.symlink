@@ -97,7 +97,14 @@ before layers configuration."
                                :size 14
                                :weight normal
                                :width normal
-                               :powerline-scale 1.1)
+                               :powerline-scale 1.4)
+
+   ;; (setq-default dotspacemacs-default-font '("Source Code Pro"
+   ;;                                          :size 14
+   ;;                                          :weight normal
+   ;;                                          :width normal
+   ;;                                          :powerline-scale 1.1))
+
    ;; The leader key
    dotspacemacs-leader-key "\\"
    ;; The leader key accessible in `emacs state' and `insert state'
@@ -164,7 +171,7 @@ before layers configuration."
   (setq-default ruby-version-manager 'rbenv)
   )
 
-(defun dotspacemacs/config ()
+(defun dotspacemacs/user-config ()
   "Configuration function.
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
@@ -176,8 +183,8 @@ layers configuration."
   (setq web-mode-code-indent-offset 2)
   (setq web-mode-markup-indent-offset 2)
   (setq js-indent-level 2)
-  (setq powerline-default-separator 'nil)
-  (global-auto-complete-mode)
+  (setq powerline-default-separator 'arrow)
+  ;; (global-auto-complete-mode)
   (global-hl-line-mode -1)
   (setq-default ruby-enable-ruby-on-rails-support t)
 )
