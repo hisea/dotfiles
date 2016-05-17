@@ -183,7 +183,7 @@ layers configuration."
   (setq web-mode-code-indent-offset 2)
   (setq web-mode-markup-indent-offset 2)
   (setq js-indent-level 2)
-  (setq powerline-default-separator 'arrow)
+  (setq powerline-default-separator 'bar)
   ;; (global-auto-complete-mode)
   (global-hl-line-mode -1)
   (setq-default ruby-enable-ruby-on-rails-support t)
