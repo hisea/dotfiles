@@ -192,7 +192,10 @@ layers configuration."
   ;; (global-auto-complete-mode)
   (global-hl-line-mode -1)
   (setq-default ruby-enable-ruby-on-rails-support t)
+  (setq dotspacemacs-additional-packages '(ws-butler))
+  (setq ws-butler-global-mode t)
 )
+       
 
 
 ;; Do not write anything past this comment. This is where Emacs will
