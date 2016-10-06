@@ -10,6 +10,12 @@
 #
 alias be="bundle exec"
 alias em='open -a /Applications/Emacs.app $1'
+alias et='emacs -nw $1'
+
+alias ec=launch_emacs_client
+launch_emacs_client() {
+    emacsclient $1 $2 -a=emacs $1 -q &
+}
 
 unsetopt correct_all
 
