@@ -35,6 +35,7 @@
      version-control
      dockerfile
      react
+     csv
      ;; better-defaults
      (git :variables
           git-gutter-use-fringe t)
