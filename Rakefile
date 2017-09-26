@@ -1,7 +1,6 @@
 require 'rake'
 
 DIR_MAPPING = {
-  "#{Dir.pwd}/vim" => "#{ENV['HOME']}/.vim",
   "#{Dir.pwd}/tmuxinator" => "#{ENV['HOME']}/.tmuxinator"
   # "#{Dir.pwd}/omzsh-custom" => "#{ENV['HOME']}/.oh-my-zsh/custom"
 }
