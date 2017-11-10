@@ -27,6 +27,7 @@
      github
      dockerfile
      version-control
+     shell
      ;;Language
      go
      shell-scripts
