@@ -45,6 +45,8 @@
      yaml
      html
      scala
+     (c-c++ :variables c-c++-enable-clang-support t)
+     rust
      ;; better-defaults
      (git :variables
           git-gutter-use-fringe t)
