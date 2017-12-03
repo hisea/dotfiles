@@ -25,8 +25,8 @@ export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 ### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-#export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+# export PATH="/usr/local/heroku/bin:$PATH"
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 
 # export RBENV_ROOT=/usr/local/var/rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
@@ -43,6 +43,10 @@ export ANDROID_HOME="$HOME/Library/Android/sdk"
 export PATH="$ANDROID_HOME/platform-tools:$PATH"
 # Set case-sensitivity for completion, history lookup, etc.
 # zstyle ':prezto:*:*' case-sensitive 'yes'
+
+#C/C++ For Homebrew llvm
+#
+export PATH="/usr/local/opt/llvm/bin:$PATH"
 
 # Color output (auto set to 'no' on dumb terminals).
 zstyle ':prezto:*:*' color 'yes'
