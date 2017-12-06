@@ -35,6 +35,10 @@ eval "$(rbenv init -)"
 #export PATH="$HOME/.exenv/bin:$PATH"
 #eval "$(exenv init -)"
 
+#NVM
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
+
 export JENV_ROOT=/usr/local/var/jenv
 if which jenv > /dev/null; then eval "$(jenv init -)"; fi
 
