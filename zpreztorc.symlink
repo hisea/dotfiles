@@ -8,6 +8,7 @@
 #
 # General
 #
+alias vim="nvim"
 alias be="bundle exec"
 alias em='open -a /Applications/Emacs.app $1'
 alias et='emacs -nw $1'
@@ -19,7 +20,7 @@ launch_emacs_client() {
 
 unsetopt correct_all
 
-export EDITOR=vim
+export EDITOR=nvim
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
