@@ -200,6 +200,14 @@ layers configuration."
   (setq go-use-gometalinter t)
   (setq gofmt-command "goimports")
   (setq go-tab-width 4)
+  (setq flycheck-gometalinter-vendor t)
+  (setq flycheck-gometalinter-errors-only t)
+  ;; only run fast linters
+  (setq flycheck-gometalinter-fast t)
+  ;; use in tests files
+  (setq flycheck-gometalinter-test t)
+  ;; disable linters
+  ;;(setq flycheck-gometalinter-disable-linters '("gotype" "gocyclo"))
   (setq-default indent-tabs-mode nil)
   (setq js2-basic-offset 2)
   (setq js2-strict-missing-semi-warning nil)
