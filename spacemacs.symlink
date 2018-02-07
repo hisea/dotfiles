@@ -28,6 +28,7 @@
      dockerfile
      version-control
      shell
+     case
      ;;Language
      go
      shell-scripts

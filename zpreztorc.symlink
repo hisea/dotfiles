@@ -8,6 +8,8 @@
 #
 # General
 #
+# zmodload zsh/zprof
+
 alias vim="nvim"
 alias be="bundle exec"
 alias em='open -a /Applications/Emacs.app $1'
@@ -37,8 +39,8 @@ eval "$(rbenv init -)"
 #eval "$(exenv init -)"
 
 #NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
@@ -52,9 +54,12 @@ export PATH="$ANDROID_HOME/platform-tools:$PATH"
 # Set case-sensitivity for completion, history lookup, etc.
 # zstyle ':prezto:*:*' case-sensitive 'yes'
 
+# Rust
+#
+export PATH="$HOME/.cargo/bin:$PATH"
 #C/C++ For Homebrew llvm
 #
-export PATH="/usr/local/opt/llvm/bin:$PATH"
+# export PATH="/usr/local/opt/llvm/bin:$PATH"
 
 # Color output (auto set to 'no' on dumb terminals).
 zstyle ':prezto:*:*' color 'yes'
@@ -81,7 +86,6 @@ zstyle ':prezto:load' pmodule \
   'homebrew' \
   'osx' \
   'ssh' \
-  'tmux' \
   'rails' \
   'ruby' \
   'helper' \
@@ -208,3 +212,4 @@ zstyle ':prezto:module:prompt' theme 'sorin'
 
 # Integrate with iTerm2.
 zstyle ':prezto:module:tmux:iterm' integrate 'yes'
+# zprof
