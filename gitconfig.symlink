@@ -16,7 +16,7 @@
 [core]
   whitespace = error,trailing-space,cr-at-eol,-blank-at-eof,tab-in-indent
   excludesfile = .gitignore.local
-  editor = /usr/local/bin/vim
+  editor = /usr/local/bin/nvim
   pager = /usr/bin/less -XRS -x4
 [color "diff"]
   whitespace = red reverse
