@@ -15,6 +15,7 @@ source ~/.local.sh
 
 alias vim="nvim"
 alias be="bundle exec"
+alias ci="code-insiders"
 alias em='open -a /Applications/Emacs.app $1'
 alias et='emacs -nw $1'
 

@@ -121,7 +121,7 @@ before layers configuration."
    ;;                            :width normal
    ;;                            :powerline-scale 1.2)
 
-   dotspacemacs-default-font '("Roboto Mono"
+   dotspacemacs-default-font '("Fira Code"
            :size 14
            :weight normal
            :width normal
