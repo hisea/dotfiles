@@ -13,11 +13,31 @@ source ~/.local.sh
 # zmodload zsh/zprof
 
 
-alias vim="nvim"
 alias be="bundle exec"
 alias ci="code-insiders"
 alias em='open -a /Applications/Emacs.app $1'
 alias et='emacs -nw $1'
+
+#CLI Tools
+#
+# brew install nvim
+# brew install bat
+# brew install prettyping
+# brew install htop
+# brew install diff-so-fancy
+# brew install fd
+# brew install ncdu
+# brew install tldr
+#
+
+alias vim="nvim"
+alias cat="bat"
+alias ping="prettyping"
+alias help='tldr'
+alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
+
+
+# Emacs Client
 
 alias ec=launch_emacs_client
 launch_emacs_client() {

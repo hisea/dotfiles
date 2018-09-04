@@ -11,7 +11,7 @@
 [filemerge]
   executable = vimdiff
 [merge]
-  tool = vimdiff
+	tool = vimdiff
   ff = only
 [core]
   whitespace = error,trailing-space,cr-at-eol,-blank-at-eof,tab-in-indent
@@ -21,8 +21,8 @@
 [color "diff"]
   whitespace = red reverse
 [user]
-  name = Yinghai Zhao
-  email = zyinghai@gmail.com
+	name = Yinghai Zhao
+	email = zyinghai@gmail.com
 [gui]
 [push]
   default = simple
@@ -70,3 +70,11 @@
   ;show-date = relative
   line-graphics = default ;utf-8
   tab-size = 4
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[pager]
+       diff = diff-so-fancy | less --tabs=1,5 -RFX
+       show = diff-so-fancy | less --tabs=1,5 -RFX
