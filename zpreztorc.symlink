@@ -20,18 +20,10 @@ alias et='emacs -nw $1'
 
 #CLI Tools
 #
-# brew install nvim
-# brew install bat
-# brew install prettyping
-# brew install htop
-# brew install diff-so-fancy
-# brew install fd
-# brew install ncdu
-# brew install tldr
+# brew install nvim bat prettyping htop diff-so-fancy fd ncdu tldr tig
 #
 
-alias vim="nvim"
-alias cat="bat"
+# alias vim="nvim"
 alias ping="prettyping"
 alias help='tldr'
 alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
