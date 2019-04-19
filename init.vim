@@ -1,4 +1,14 @@
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 call plug#begin()
+
+Plug 'morhetz/gruvbox'
+" {{{
+  let g:gruvbox_termcolors=16
+" }}}
+Plug 'nanotech/jellybeans.vim'
+" {{{
+  let g:jellybeans_use_term_background_color = 0
+" }}}
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'tpope/vim-sensible'
 Plug 'Shougo/denite.nvim'
@@ -11,6 +21,50 @@ Plug 'w0rp/ale'
 Plug 'prettier/prettier'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+"{{{ 
+  let g:fzf_nvim_statusline = 0 " disable statusline overwriting
+
+  nnoremap <silent> <leader><space> :Files<CR>
+  nnoremap <silent> <leader>a :Buffers<CR>
+  nnoremap <silent> <leader>A :Windows<CR>
+  nnoremap <silent> <leader>; :BLines<CR>
+  nnoremap <silent> <leader>o :BTags<CR>
+  nnoremap <silent> <leader>O :Tags<CR>
+  nnoremap <silent> <leader>? :History<CR>
+  nnoremap <silent> <leader>/ :execute 'Ag ' . input('Ag/')<CR>
+  nnoremap <silent> <leader>. :AgIn 
+
+  nnoremap <silent> K :call SearchWordWithAg()<CR>
+  vnoremap <silent> K :call SearchVisualSelectionWithAg()<CR>
+  nnoremap <silent> <leader>gl :Commits<CR>
+  nnoremap <silent> <leader>ga :BCommits<CR>
+  nnoremap <silent> <leader>ft :Filetypes<CR>
+
+  imap <C-x><C-f> <plug>(fzf-complete-file-ag)
+  imap <C-x><C-l> <plug>(fzf-complete-line)
+
+  function! SearchWordWithAg()
+    execute 'Ag' expand('<cword>')
+  endfunction
+
+  function! SearchVisualSelectionWithAg() range
+    let old_reg = getreg('"')
+    let old_regtype = getregtype('"')
+    let old_clipboard = &clipboard
+    set clipboard&
+    normal! ""gvy
+    let selection = getreg('"')
+    call setreg('"', old_reg, old_regtype)
+    let &clipboard = old_clipboard
+    execute 'Ag' selection
+  endfunction
+
+  function! SearchWithAgInDirectory(...)
+    call fzf#vim#ag(join(a:000[1:], ' '), extend({'dir': a:1}, g:fzf#vim#default_layout))
+  endfunction
+  command! -nargs=+ -complete=dir AgIn call SearchWithAgInDirectory(<f-args>)
+" }}}
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 Plug 'zchee/nvim-go', { 'do': 'make'}
@@ -26,12 +80,21 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'nathanaelkane/vim-indent-guides'
+" {{{
+  let g:indent_guides_default_mapping = 0
+  let g:indent_guides_enable_on_vim_startup = 1
+  let g:indent_guides_start_level = 2
+  let g:indent_guides_exclude_filetypes = ['help', 'startify', 'man', 'rogue']
+" }}}
 call plug#end()
 
 ""
 "" Basic Setup
 ""
 
+"colorscheme jellybeans
+colorscheme gruvbox
+set background=dark    " Setting dark mode
 syntax enable
 filetype plugin indent on
 set encoding=utf-8
@@ -85,6 +148,7 @@ let g:deoplete#enable_at_startup = 1
 
 let g:user_emmet_leader_key='<Tab>'
 let g:user_emmet_settings = {'javascript.jsx' : { 'extends' : 'jsx'}}
+
 
 ""
 "" Key Mappings
