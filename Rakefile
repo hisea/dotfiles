@@ -1,12 +1,15 @@
+require 'fileutils'
 require 'rake'
 
 DIR_MAPPING = {
   "#{Dir.pwd}/tmuxinator" => "#{ENV['HOME']}/.tmuxinator"
+  # "#{Dir.pwd}/config/nvim" => "#{ENV['HOME']}/.config/nvim"
   # "#{Dir.pwd}/omzsh-custom" => "#{ENV['HOME']}/.oh-my-zsh/custom"
 }
 
 FILE_MAPING = {
   # "#{Dir.pwd}/init.fish" => "#{ENV['HOME']}/.config/omf/init.fish",
+   "#{Dir.pwd}/init.vim" => "#{ENV['HOME']}/.config/nvim/init.vim"
 }
 
 task install: [
@@ -79,6 +82,11 @@ def link_dir(src, dest)
 end
 
 def link_single_file(src, dest)
+
+  dirname = File.dirname(dest)
+  unless File.directory?(dirname)
+    FileUtils.mkdir_p(dirname)
+  end
   backup_file dest
   puts "linking #{dest}"
   system %( ln -sf "#{src}" "#{dest}" )
