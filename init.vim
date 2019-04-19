@@ -28,6 +28,10 @@ Plug 'airblade/vim-gitgutter'
 Plug 'nathanaelkane/vim-indent-guides'
 call plug#end()
 
+""
+"" Basic Setup
+""
+
 syntax enable
 filetype plugin indent on
 set encoding=utf-8
@@ -50,10 +54,7 @@ set visualbell
 set smartindent
 set shell=zsh
 
-""
 "" Whitespace
-""
-
 set nowrap                        " don't wrap lines
 set tabstop=2                     " a tab is two spaces
 set shiftwidth=2                  " an autoindent (with <<) is two spaces
@@ -70,17 +71,30 @@ set listchars+=extends:>          " The character to show in the last column whe
 set listchars+=precedes:<         " The character to show in the last column when wrap is
                                   " off and the line continues beyond the right of the screen
 
-""
 "" Searching
-""
-
 set hlsearch    " highlight matches
 set incsearch   " incremental searching
 set ignorecase  " searches are case insensitive...
 set smartcase   " ... unless they contain at least one capital letter
+
+""
+"" Plugin Settings
+""
 
 let g:deoplete#enable_at_startup = 1
 
 let g:user_emmet_leader_key='<Tab>'
 let g:user_emmet_settings = {'javascript.jsx' : { 'extends' : 'jsx'}}
 
+""
+"" Key Mappings
+""
+
+nmap <leader>ll :set number! number?<cr>
+" upper/lower word
+nmap <leader>Wu mQviwU`Q
+nmap <leader>Wl mQviwu`Q
+
+" upper/lower first char of word
+nmap <leader>WU mQgewvU`Q
+nmap <leader>WL mQgewvu`Q
