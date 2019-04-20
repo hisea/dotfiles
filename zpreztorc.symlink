@@ -23,7 +23,7 @@ alias et='emacs -nw $1'
 # brew install nvim bat prettyping htop diff-so-fancy fd ncdu tldr tig
 #
 
-# alias vim="nvim"
+alias vim="nvim"
 alias ping="prettyping"
 alias help='tldr'
 alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
@@ -161,6 +161,7 @@ zstyle ':prezto:module:editor' key-bindings 'emacs'
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
 zstyle ':prezto:module:prompt' theme 'sorin'
+#zstyle ':prezto:module:prompt' theme 'powerlevel9k'
 
 #
 # Ruby

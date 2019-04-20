@@ -2,14 +2,14 @@ require 'fileutils'
 require 'rake'
 
 DIR_MAPPING = {
-  "#{Dir.pwd}/tmuxinator" => "#{ENV['HOME']}/.tmuxinator"
-  # "#{Dir.pwd}/config/nvim" => "#{ENV['HOME']}/.config/nvim"
+  "#{Dir.pwd}/tmuxinator" => "#{ENV['HOME']}/.tmuxinator",
+  "#{Dir.pwd}/nvim" => "#{ENV['HOME']}/.config/nvim"
   # "#{Dir.pwd}/omzsh-custom" => "#{ENV['HOME']}/.oh-my-zsh/custom"
 }
 
 FILE_MAPING = {
   # "#{Dir.pwd}/init.fish" => "#{ENV['HOME']}/.config/omf/init.fish",
-   "#{Dir.pwd}/init.vim" => "#{ENV['HOME']}/.config/nvim/init.vim"
+  # "#{Dir.pwd}/init.vim" => "#{ENV['HOME']}/.config/nvim/init.vim"
 }
 
 task install: [
