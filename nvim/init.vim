@@ -1,7 +1,8 @@
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 call plug#begin()
-
+"Colorscheme
 Plug 'mhartington/oceanic-next'
+Plug 'nanotech/jellybeans.vim'
+"Plugins
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'tpope/vim-sensible'
 Plug 'brooth/far.vim'
@@ -71,6 +72,12 @@ Plug 'scrooloose/nerdtree'
 Plug 'spf13/vim-autoclose'
 Plug 'sheerun/vim-polyglot'
 Plug 'scrooloose/nerdcommenter'
+"{{{
+  let g:NERDCreateDefaultMappings = 0
+  map <leader>cc <plug>NERDCommenterToggle<CR>
+  vmap <leader>cc <plug>NERDCommenterToggle gv
+"}}}"
+Plug 'jbgutierrez/vim-better-comments'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -87,11 +94,12 @@ call plug#end()
 "" Basic Setup
 ""
 
+" Colorscheme
 set termguicolors
-
 "colorscheme jellybeans
 "colorscheme gruvbox
 colorscheme OceanicNext
+
 set background=dark    " Setting dark mode
 syntax enable
 filetype plugin indent on
@@ -137,6 +145,18 @@ set hlsearch    " highlight matches
 set incsearch   " incremental searching
 set ignorecase  " searches are case insensitive...
 set smartcase   " ... unless they contain at least one capital letter
+
+hi htmlArg gui=italic cterm=italic
+hi Comment gui=italic cterm=italic
+hi Type    gui=italic cterm=italic
+"hi Keyword gui=italic cterm=italic
+hi CustomItalic gui=italic cterm=italic
+call matchadd('CustomItalic', '\<import\>')
+call matchadd('CustomItalic', '\<from\>')
+call matchadd('CustomItalic', '\<const\>')
+call matchadd('CustomItalic', '\<let\>') 
+call matchadd('CustomItalic', '\<async\>')
+call matchadd('CustomItalic', '\<await\>')
 
 ""
 "" Plugin Settings
@@ -187,6 +207,7 @@ nnoremap <leader>fw :<C-u>DeniteCursorWord grep:. -mode=normal<CR>
 
 " === Nerdtree shorcuts === "
 "  <leader>n - Toggle NERDTree on/off
+nmap <leader>nt :NERDTreeToggle<CR>
 "  <leader>f - Opens current file location in NERDTree
 nmap <leader>nf :NERDTreeFind<CR>
 
@@ -197,7 +218,6 @@ nmap <leader>nf :NERDTreeFind<CR>
 
 map <leader>rv :so $MYVIMRC<CR>
 nmap <leader>tl :set number! number?<cr>
-nmap <leader>tn :NERDTreeToggle<CR>
 nnoremap <silent><expr> <Leader>hl (&hls && v:hlsearch ? ':nohls' : ':set hls')."\n"
 
 nmap <leader>gs :Gstatus<cr>
