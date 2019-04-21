@@ -36,13 +36,12 @@ Plug 'junegunn/fzf.vim'
   nnoremap <silent> <C-p> :GFiles<CR>
   nnoremap <silent> <leader>ff :Files<CR>
   nnoremap <silent> <leader>fb :Buffers<CR>
-  nnoremap <silent> <leader>fw :Windows<CR>
   nnoremap <silent> <leader>fl :BLines<CR>
   nnoremap <silent> <leader>? :History<CR>
   nnoremap <silent> <leader>fk :Maps<CR>
   nnoremap <silent> <leader>fc :Commands<CR>
   nnoremap <silent> <leader>/ :Rg<CR>
-  nnoremap <silent> <Leader>f/ :Rg <C-R><C-W><CR>
+  nnoremap <silent> <Leader>fw :Rg <C-R><C-W><CR>
   nnoremap <silent> <leader>gl :Commits<CR>
   nnoremap <silent> <leader>ga :BCommits<CR>
   nnoremap <silent> <leader>ft :Filetypes<CR>
@@ -80,6 +79,10 @@ Plug 'scrooloose/nerdtree'
   nmap <leader>nf :NERDTreeFind<CR>
 "}}}"
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'jceb/vim-orgmode'
+"{{{
+:let g:org_todo_keywords=['TODO(t)', 'WIP(w)', 'BLOCKED(b)', 'VERIFY(v)', '|', 'DONE(d)', 'DELEGATED(g)']
+"}}}"
 Plug 'spf13/vim-autoclose'
 Plug 'sheerun/vim-polyglot'
 Plug 'scrooloose/nerdcommenter'
