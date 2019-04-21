@@ -22,6 +22,7 @@ let g:ale_fixers = {
   hi! ALEErrorSign guifg=#DF8C8C ctermfg=167
   let g:ale_sign_warning = '⚠'
   hi! ALEWarningSign guifg=#F2C38F ctermfg=221
+  nmap <leader>lf :ALEFix<cr>
   "let g:ale_fix_on_save = 1
 "}}}"
 Plug 'prettier/prettier'
@@ -40,8 +41,8 @@ Plug 'junegunn/fzf.vim'
   nnoremap <silent> <leader>? :History<CR>
   nnoremap <silent> <leader>fk :Maps<CR>
   nnoremap <silent> <leader>fc :Commands<CR>
-  nnoremap <silent> <A-P> :Commands<CR>
   nnoremap <silent> <leader>/ :Rg<CR>
+  nnoremap <silent> <Leader>f/ :Rg <C-R><C-W><CR>
   nnoremap <silent> <leader>gl :Commits<CR>
   nnoremap <silent> <leader>ga :BCommits<CR>
   nnoremap <silent> <leader>ft :Filetypes<CR>
@@ -71,6 +72,13 @@ Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdtree'
+"{{{
+  " === Nerdtree shorcuts === "
+  "  <leader>n - Toggle NERDTree on/off
+  nmap <leader>nt :NERDTreeToggle<CR>
+  "  <leader>f - Opens current file location in NERDTree
+  nmap <leader>nf :NERDTreeFind<CR>
+"}}}"
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'spf13/vim-autoclose'
 Plug 'sheerun/vim-polyglot'
@@ -83,7 +91,11 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'jbgutierrez/vim-better-comments'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
+"{{{
+  nmap <leader>gs :Gstatus<cr>
+  nmap <leader>gb :Gblame<cr>
+"}}}"
+Plug 'mhinz/vim-signify'
 Plug 'nathanaelkane/vim-indent-guides'
 " {{{
   let g:indent_guides_default_mapping = 0
@@ -93,6 +105,10 @@ Plug 'nathanaelkane/vim-indent-guides'
   map <leader>ti :IndentGuidesToggle<CR>
 " }}}
 Plug 'vimlab/split-term.vim'
+Plug 'thekelvinliu/kwbd'
+"{{{
+nmap <leader>bd <plug>(kwbd)
+"}}}
 
 " Tmux
 if !empty($TMUX)                    " vim + tmux integration
@@ -124,7 +140,7 @@ set encoding=utf-8
 set nocompatible      " Use vim, no vi defaults
 set showtabline=2
 set linespace=2
-set number            " Show line numbers
+"set number            " Show line numbers
 set ruler             " Show line and column number
 set noswapfile        " No Swap Files
 set nobackup
@@ -218,21 +234,10 @@ let g:polyglot_disabled=['javascript.jsx', 'javascript']
 "" Key Mappings
 ""
 
-"Denite
-
-" nmap ; :Denite buffer -split=floating -winrow=1<CR>
-nnoremap <leader>f/ :<C-u>Denite grep:. -no-empty -mode=normal<CR>
-nnoremap <leader>fw :<C-u>DeniteCursorWord grep:. -mode=normal<CR>
-
 " use :w!! to write to a file using sudo if you forgot to 'sudo vim file'
 " (it will prompt for sudo password when writing)
 cmap w!! %!sudo tee > /dev/null %
 
-" === Nerdtree shorcuts === "
-"  <leader>n - Toggle NERDTree on/off
-nmap <leader>nt :NERDTreeToggle<CR>
-"  <leader>f - Opens current file location in NERDTree
-nmap <leader>nf :NERDTreeFind<CR>
 
 "   <Space> - PageDown
 "   -       - PageUp
@@ -243,13 +248,14 @@ map <leader>rv :so $MYVIMRC<CR>
 nmap <leader>tl :set number! number?<cr>
 nnoremap <silent><expr> <Leader>hl (&hls && v:hlsearch ? ':nohls' : ':set hls')."\n"
 
-nmap <leader>gs :Gstatus<cr>
-nmap <leader>lf :ALEFix<cr>
 
+nnoremap tl :tabnext<CR>
+nnoremap th :tabprev<CR>
+nnoremap tn :tabnew<CR>
 " Easy toggle between window
 nmap <leader>ww <C-w>w
 "Close Window
-nmap <leader>wq <C-w>q
+nmap <leader>wd <C-w>c
 
 " upper/lower word
 nmap <leader>Wu mQviwU`Q
