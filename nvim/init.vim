@@ -31,6 +31,7 @@ Plug 'junegunn/fzf.vim'
 "{{{ 
   let g:fzf_nvim_statusline = 0 " disable statusline overwriting
 
+  nnoremap <silent> <leader>pf :GFiles<CR>
   nnoremap <silent> <C-p> :GFiles<CR>
   nnoremap <silent> <leader>ff :Files<CR>
   nnoremap <silent> <leader>fb :Buffers<CR>
@@ -39,6 +40,7 @@ Plug 'junegunn/fzf.vim'
   nnoremap <silent> <leader>? :History<CR>
   nnoremap <silent> <leader>fk :Maps<CR>
   nnoremap <silent> <leader>fc :Commands<CR>
+  nnoremap <silent> <A-P> :Commands<CR>
   nnoremap <silent> <leader>/ :Rg<CR>
   nnoremap <silent> <leader>gl :Commits<CR>
   nnoremap <silent> <leader>ga :BCommits<CR>
@@ -57,7 +59,7 @@ Plug 'autozimu/LanguageClient-neovim', {
       \ 'do': 'bash install.sh',
       \ }
 
-" Toolu
+" Tools
 Plug 'vim-airline/vim-airline'
 "{{{
   let g:airline_left_sep = "\uE0C6"
@@ -69,6 +71,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'spf13/vim-autoclose'
 Plug 'sheerun/vim-polyglot'
 Plug 'scrooloose/nerdcommenter'
@@ -84,10 +87,24 @@ Plug 'airblade/vim-gitgutter'
 Plug 'nathanaelkane/vim-indent-guides'
 " {{{
   let g:indent_guides_default_mapping = 0
-  let g:indent_guides_enable_on_vim_startup = 1
+  let g:indent_guides_enable_on_vim_startup = 0
   let g:indent_guides_start_level = 2
   let g:indent_guides_exclude_filetypes = ['help', 'startify', 'man', 'rogue']
+  map <leader>ti :IndentGuidesToggle<CR>
 " }}}
+Plug 'vimlab/split-term.vim'
+
+" Tmux
+if !empty($TMUX)                    " vim + tmux integration
+  Plug 'roxma/vim-tmux-clipboard'
+  Plug 'tmux-plugins/vim-tmux-focus-events'
+
+  " When Tmux 'focus-events' option is on, Tmux will send <Esc>[O when the
+  " window loses focus and <Esc>[I when it gains focus.
+  exec "set <F24>=\<Esc>[O"
+  exec "set <F25>=\<Esc>[I"
+endif
+
 call plug#end()
 
 ""
@@ -178,10 +195,12 @@ let g:LanguageClient_serverCommands = {
       \}
 
 let g:LanguageClient_autoStart = 1
+set scl=yes " Fix flickering on text input
 
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-nnoremap <silent> gr :call LanguageClient#textDocument_references()<CR>
+nnoremap <silent> ld :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> lr :call LanguageClient#textDocument_references()<CR>
+nnoremap <silent> <leader>ls :call LanguageClient#textDocument_documentSymbol()<CR>
 nnoremap <silent> <leader><leader> :call LanguageClient#explainErrorAtPoint()<CR>
 
 let g:LanguageClient_loggingFile = '/tmp/LanguageClient.log'
@@ -204,6 +223,10 @@ let g:polyglot_disabled=['javascript.jsx', 'javascript']
 " nmap ; :Denite buffer -split=floating -winrow=1<CR>
 nnoremap <leader>f/ :<C-u>Denite grep:. -no-empty -mode=normal<CR>
 nnoremap <leader>fw :<C-u>DeniteCursorWord grep:. -mode=normal<CR>
+
+" use :w!! to write to a file using sudo if you forgot to 'sudo vim file'
+" (it will prompt for sudo password when writing)
+cmap w!! %!sudo tee > /dev/null %
 
 " === Nerdtree shorcuts === "
 "  <leader>n - Toggle NERDTree on/off
@@ -235,3 +258,33 @@ nmap <leader>Wl mQviwu`Q
 " upper/lower first char of word
 nmap <leader>WU mQgewvU`Q
 nmap <leader>WL mQgewvu`Q
+
+" Map command-[ and command-] to indenting or outdenting
+" while keeping the original selection in visual mode
+vmap <leader>] >gv
+vmap <leader>[ <gv
+
+nmap <leader>] >>
+nmap <leader>[ <<
+
+omap <leader>] >>
+omap <leader>[ <<
+
+imap <leader>] <Esc>>>i
+imap <leader>[ <Esc><<i
+
+" Bubble single lines
+nmap <C-Up> [e
+nmap <C-Down> ]e
+nmap <C-k> [e
+nmap <C-j> ]e
+
+" Bubble multiple lines
+vmap <C-Up> [egv
+vmap <C-Down> ]egv
+vmap <C-k> [egv
+vmap <C-j> ]egv
+
+" Make shift-insert work like in Xterm
+map <S-Insert> <MiddleMouse>
+map! <S-Insert> <MiddleMouse>
