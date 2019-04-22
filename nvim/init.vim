@@ -30,8 +30,10 @@ Plug 'prettier/prettier'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'fszymanski/fzf-quickfix'
 "{{{ 
   let g:fzf_nvim_statusline = 0 " disable statusline overwriting
+  let g:fzf_quickfix_use_loclist = 1
 
   nnoremap <silent> <leader>pf :GFiles<CR>
   nnoremap <silent> <C-p> :GFiles<CR>
@@ -46,6 +48,7 @@ Plug 'junegunn/fzf.vim'
   nnoremap <silent> <leader>gl :Commits<CR>
   nnoremap <silent> <leader>ga :BCommits<CR>
   nnoremap <silent> <leader>ft :Filetypes<CR>
+  nnoremap <silent> <Leader>fq :Quickfix<CR>
 
   imap <C-x><C-f> <plug>(fzf-complete-file-ag)
   imap <C-x><C-l> <plug>(fzf-complete-line)
@@ -77,9 +80,9 @@ Plug 'scrooloose/nerdtree'
 "{{{
   " === Nerdtree shorcuts === "
   "  <leader>n - Toggle NERDTree on/off
-  nmap <leader>nt :NERDTreeToggle<CR>
+  nmap <leader>n :NERDTreeToggle<CR>
   "  <leader>f - Opens current file location in NERDTree
-  nmap <leader>nf :NERDTreeFind<CR>
+  nmap <leader>fn :NERDTreeFind<CR>
 "}}}"
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'jceb/vim-orgmode'
@@ -91,10 +94,13 @@ Plug 'sheerun/vim-polyglot'
 Plug 'scrooloose/nerdcommenter'
 "{{{
   let g:NERDCreateDefaultMappings = 0
-  map <leader>cc <plug>NERDCommenterToggle<CR>
-  vmap <leader>cc <plug>NERDCommenterToggle gv
+  map <leader>c <plug>NERDCommenterToggle<CR>
+  vmap <leader>c <plug>NERDCommenterToggle gv
 "}}}"
 Plug 'simnalamburt/vim-mundo'
+"{{{
+  map <leader>m :MundoToggle<CR>
+"}}}"
 Plug 'andymass/vim-tradewinds'
 Plug 'jbgutierrez/vim-better-comments'
 Plug 'tpope/vim-unimpaired'
@@ -140,12 +146,13 @@ call plug#end()
 "  Basic Setup
 "
 
- Colorscheme
+" Colorscheme
 set termguicolors
 "colorscheme jellybeans
 "colorscheme gruvbox
 colorscheme OceanicNext
 
+set fcs=eob:\ 
 set background=dark    " Setting dark mode
 syntax enable
 filetype plugin indent on
@@ -282,10 +289,30 @@ endfunction
 call s:profile(s:denite_options)
 
 " === Coc.nvim === "
-" CocInstall coc-tsserver coc-eslint coc-json coc-prettier coc-css
-nmap <silent> <leader>dd <Plug>(coc-definition)
-nmap <silent> <leader>dr <Plug>(coc-references)
-nmap <silent> <leader>dj <Plug>(coc-implementation)
+" CocInstall coc-list coc-tsservner coc-eslint coc-json coc-prettier coc-css
+nmap <silent> <leader>ld <Plug>(coc-definition)
+nmap <silent> <leader>lr <Plug>(coc-references)
+nmap <silent> <leader>lj <Plug>(coc-implementation)
+nmap <silent> <leader>lt <Plug>(coc-type-definition)
+
+nnoremap <silent> <space>d  :<C-u>CocList diagnostics<CR>
+nnoremap <silent> <space>o  :<C-u>CocList outline<CR>
+nnoremap <silent> <space>w  :<C-u>CocList symbols<CR>
+nnoremap <silent> <space>b  :<C-u>CocList buffers<CR>
+nnoremap <silent> <space>m  :<C-u>CocList mru<CR>
+nnoremap <silent> <space>s  :exe 'CocList -I --normal --input='.expand('<cword>').' words'<CR>
+nnoremap <silent> <space>S  :exe 'CocList --normal grep '.expand('<cword>').''<CR>
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+	if &filetype == 'vim'
+		execute 'h '.expand('<cword>')
+	else
+		call CocAction('doHover')
+	endif
+endfunction
+
 " use <tab> for trigger completion and navigate to next complete item
 function! s:check_back_space() abort
   let col = col('.') - 1
