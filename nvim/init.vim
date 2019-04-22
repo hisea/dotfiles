@@ -126,6 +126,7 @@ nmap <leader>bd <plug>(kwbd)
 
 " COC
 Plug 'Shougo/denite.nvim'
+Plug 'neoclide/denite-extra'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 Plug 'neoclide/coc-denite'
 
@@ -255,6 +256,8 @@ call denite#custom#var('grep', 'final_opts', [])
 
 " Remove date from buffer list
 call denite#custom#var('buffer', 'date_format', '')
+call denite#custom#map('insert', '<C-j>', '<denite:move_to_next_line>', 'noremap')
+call denite#custom#map('insert', '<C-k>', '<denite:move_to_previous_line>', 'noremap')
 
 " Custom options for Denite
 "   auto_resize             - Auto resize the Denite window height automatically.
