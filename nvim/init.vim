@@ -231,8 +231,8 @@ let g:polyglot_disabled=['javascript.jsx', 'javascript']
 "   --glob:  Include or exclues files for searching that match the given glob
 "            (aka ignore .git files)
 "
-nmap ; :Denite buffer -split=floating -winrow=1<CR>
-nmap <leader>t :Denite file/rec -split=floating -winrow=1<CR>
+nmap ; :Denite buffer<CR>
+nmap <leader>t :DeniteProjectDir file/rec<CR>
 nnoremap <leader>g :<C-u>Denite grep:. -no-empty -mode=normal<CR>
 nnoremap <leader>j :<C-u>DeniteCursorWord grep:. -mode=normal<CR>
 

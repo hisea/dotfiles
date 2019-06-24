@@ -23,6 +23,7 @@
 [user]
 	name = Yinghai Zhao
 	email = zyinghai@gmail.com
+	signingkey = A74D7FA58905F9FA
 [gui]
 [push]
   default = simple
@@ -78,3 +79,7 @@
 [pager]
        diff = diff-so-fancy | less --tabs=1,5 -RFX
        show = diff-so-fancy | less --tabs=1,5 -RFX
+[gpg]
+	program = gpg
+[commit]
+	gpgsign = true

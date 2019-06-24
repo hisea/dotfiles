@@ -44,7 +44,10 @@ export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-### Added by the Heroku Toolbelt
+#GPG 
+export GPG_TTY=$(tty)
+
+# Added by the Heroku Toolbelt
 # export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 
@@ -54,6 +57,7 @@ eval "$(rbenv init -)"
 
 #export PATH="$HOME/.exenv/bin:$PATH"
 #eval "$(exenv init -)"
+
 
 #NVM
 # export NVM_DIR="$HOME/.nvm"
