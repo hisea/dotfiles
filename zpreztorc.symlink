@@ -60,11 +60,9 @@ eval "$(rbenv init -)"
 
 
 #NVM
-# export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
 export JENV_ROOT=/usr/local/var/jenv
@@ -107,11 +105,13 @@ zstyle ':prezto:load' pmodule \
   'completion' \
   'prompt' \
   'git' \
+  'gpg' \
   'osx' \
   'ssh' \
   'rails' \
   'ruby' \
   'helper' \
+  'node' \
   'homebrew' \
 
 #
@@ -168,9 +168,10 @@ zstyle ':prezto:module:git:status:ignore' submodules 'all'
 # Set the prompt theme to load.
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
- zstyle ':prezto:module:prompt' theme 'sorin'
- #zstyle ':prezto:module:prompt' theme 'spaceship'
-#zstyle ':prezto:module:prompt' theme 'powerlevel9k'
+#zstyle ':prezto:module:prompt' theme 'sorin'
+#zstyle ':prezto:module:prompt' theme 'spaceship'
+zstyle :prezto:module:prompt theme powerlevel10k
+
 
 #
 # Ruby
