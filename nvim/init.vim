@@ -56,6 +56,7 @@ Plug 'fszymanski/fzf-quickfix'
 " }}}
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
+Plug 'jparise/vim-graphql'
 Plug 'zchee/nvim-go', { 'do': 'make'}
 
 " Tools
@@ -292,7 +293,7 @@ endfunction
 call s:profile(s:denite_options)
 
 " === Coc.nvim === "
-" CocInstall coc-list coc-tsservner coc-eslint coc-json coc-prettier coc-css
+" :CocInstall coc-lists coc-tsserver coc-eslint coc-json coc-prettier coc-css
 nmap <silent> <leader>ld <Plug>(coc-definition)
 nmap <silent> <leader>lr <Plug>(coc-references)
 nmap <silent> <leader>lj <Plug>(coc-implementation)
