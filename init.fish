@@ -1,4 +1,8 @@
 # omf install bass
+# omf install https://github.com/jethrokuan/fzf
+# omf install starship
+#
+
 eval (starship init fish)
 # tic .xterm-256color-italic.terminfo
 #export TERM=xterm-256color-italic
