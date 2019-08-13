@@ -8,7 +8,7 @@ DIR_MAPPING = {
 }
 
 FILE_MAPING = {
-  # "#{Dir.pwd}/init.fish" => "#{ENV['HOME']}/.config/omf/init.fish",
+  "#{Dir.pwd}/init.fish" => "#{ENV['HOME']}/.config/omf/init.fish",
   # "#{Dir.pwd}/init.vim" => "#{ENV['HOME']}/.config/nvim/init.vim"
 }
 
