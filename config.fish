@@ -24,20 +24,20 @@ alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
 
 # Emacs Client
 
-export EDITOR=nvim
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
+set -x EDITOR nvim
+set -x PATH /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+set -x HOMEBREW_CASK_OPTS "--appdir=/Applications"
 
 #GPG
-export GPG_TTY='(tty)'
+set -x GPG_TTY '(tty)'
 
 # Added by the Heroku Toolbelt
 # export PATH="/usr/local/heroku/bin:$PATH"
-export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+set -xp PATH "/opt/local/bin:/opt/local/sbin"
 
 # export RBENV_ROOT=/usr/local/var/rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
+set -xp PATH "$HOME/.rbenv/bin"
 rbenv init - | source
 # eval "(rbenv init -)"
 
@@ -46,22 +46,22 @@ rbenv init - | source
 
 
 #NVM
-export NVM_DIR="$HOME/.nvm"
-function nvm
-   bass source (brew --prefix nvm)/nvm.sh --no-use ';' nvm $argv
-end
+#export NVM_DIR="$HOME/.nvm"
+#function nvm
+   #bass source (brew --prefix nvm)/nvm.sh --no-use ';' nvm $argv
+#end
 
-set -x NVM_DIR ~/.nvm
-nvm use default --silent
+#set -x NVM_DIR ~/.nvm
+#nvm use default --silent
 
 
 # export JENV_ROOT=/usr/local/var/jenv
 # if which jenv > /dev/null; then eval "$(jenv init -)"; fi
 
-export GOPATH="$HOME/Code/Go"
-export PATH="$GOPATH/bin:$PATH"
-export ANDROID_HOME="$HOME/Library/Android/sdk"
-export PATH="$ANDROID_HOME/platform-tools:$PATH"
+set -x GOPATH "$HOME/Code/Go"
+set -xp PATH "$GOPATH/bin"
+#export ANDROID_HOME="$HOME/Library/Android/sdk"
+#export PATH="$ANDROID_HOME/platform-tools:$PATH"
 
 # set PATH $HOME/.rbenv/bin $PATH
 # set PATH $HOME/.rbenv/shims $PATH
