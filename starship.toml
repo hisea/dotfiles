@@ -1,0 +1,8 @@
+[character]      # The name of the module we are confguring is "character"
+symbol = "❯"
+
+[git_branch]
+symbol = " "
+
+[package]
+symbol = " "

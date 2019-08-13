@@ -1,4 +1,5 @@
 # omf install bass
+# omf install nvm
 # omf install https://github.com/jethrokuan/fzf
 # omf install starship
 #
