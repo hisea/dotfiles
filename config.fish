@@ -4,7 +4,6 @@
 # omf install starship
 #
 
-eval (starship init fish)
 # tic .xterm-256color-italic.terminfo
 #export TERM=xterm-256color-italic
 alias be="bundle exec"
@@ -46,13 +45,13 @@ rbenv init - | source
 
 
 #NVM
-#export NVM_DIR="$HOME/.nvm"
-#function nvm
-   #bass source (brew --prefix nvm)/nvm.sh --no-use ';' nvm $argv
-#end
+set -x NVM_DIR ~/.nvm
+function nvm
+   bass source (brew --prefix nvm)/nvm.sh --no-use ';' nvm $argv
+end
 
-#set -x NVM_DIR ~/.nvm
-#nvm use default --silent
+nvm use default --silent
+
 
 
 # export JENV_ROOT=/usr/local/var/jenv
@@ -60,6 +59,7 @@ rbenv init - | source
 
 set -x GOPATH "$HOME/Code/Go"
 set -xp PATH "$GOPATH/bin"
+set -xp PATH "$HOME/.cargo/bin"
 #export ANDROID_HOME="$HOME/Library/Android/sdk"
 #export PATH="$ANDROID_HOME/platform-tools:$PATH"
 
@@ -67,3 +67,4 @@ set -xp PATH "$GOPATH/bin"
 # set PATH $HOME/.rbenv/shims $PATH
 # rbenv init - | source
 # rbenv rehash >/dev/null ^&1
+eval (starship init fish)
