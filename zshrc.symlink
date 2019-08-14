@@ -1,0 +1,91 @@
+#git clone https://github.com/tarjoilija/zgen.git "${HOME}/.zgen"
+# load zgen
+source "${HOME}/.zgen/zgen.zsh"
+
+zgen load zsh-users/zsh-syntax-highlighting
+zgen load zsh-users/zsh-autosuggestions
+# zgen load zsh-users/zsh-completions
+
+zgen prezto editor key-bindings 'emacs'
+zgen prezto prompt theme 'powerlevel10k'
+
+zgen prezto 'syntax-highlighting' highlighters \
+  'main' \
+  'brackets' \
+  'pattern' \
+  'root'
+
+# zgen prezto tmux:auto-start local 'yes'
+# zgen prezto '*:*' case-sensitive 'yes'
+# zgen prezto '*:*' color 'yes'
+
+zgen prezto
+zgen prezto git
+zgen prezto command-not-found
+zgen prezto tmux
+zgen prezto fasd
+zgen prezto history-substring-search
+zgen prezto syntax-highlighting
+zgen prezto git
+zgen prezto gpg
+zgen prezto osx
+zgen prezto ssh
+zgen prezto helper
+zgen prezto node
+zgen prezto homebrew
+
+zgen load lukechilds/zsh-nvm
+
+alias ci="code-insiders"
+alias em='open -a /Applications/Emacs.app $1'
+
+unsetopt correct_all
+
+# tic .xterm-256color-italic.terminfo
+#export TERM=xterm-256color-italic
+alias be="bundle exec"
+alias ci="code-insiders"
+alias em='open -a /Applications/Emacs.app $1'
+alias et='emacs -nw $1'
+
+#CLI Tools
+#
+# brew install nvim bat prettyping htop diff-so-fancy fd ncdu tldr tig
+#
+alias vim="nvim"
+alias ping="prettyping"
+alias help='tldr'
+alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
+
+export EDITOR=nvim
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
+#GPG
+export GPG_TTY=$(tty)
+
+# Added by the Heroku Toolbelt
+# export PATH="/usr/local/heroku/bin:$PATH"
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+
+# export RBENV_ROOT=/usr/local/var/rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
+#export PATH="$HOME/.exenv/bin:$PATH"
+#eval "$(exenv init -)"
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+export GOPATH="$HOME/Code/Go"
+export PATH="$GOPATH/bin:$PATH"
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export PATH="$ANDROID_HOME/platform-tools:$PATH"
+# Set case-sensitivity for completion, history lookup, etc.
+# zstyle ':prezto:*:*' case-sensitive 'yes'
+
+# Rust
+#
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
