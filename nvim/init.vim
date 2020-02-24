@@ -154,6 +154,7 @@ set termguicolors
 "colorscheme gruvbox
 colorscheme OceanicNext
 
+let g:python3_host_prog="/usr/local/bin/python3"
 set fcs=eob:\ 
 set background=dark    " Setting dark mode
 syntax enable
