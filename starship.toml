@@ -10,6 +10,9 @@ symbol = " "
 [python]
 symbol = " "
 
+[ruby]
+symbol = " "
+
 [time]
 disabled = false
 format = "%T"
