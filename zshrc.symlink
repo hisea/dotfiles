@@ -7,7 +7,7 @@ zgen load zsh-users/zsh-autosuggestions
 # zgen load zsh-users/zsh-completions
 
 zgen prezto editor key-bindings 'emacs'
-zgen prezto prompt theme 'powerlevel10k'
+#zgen prezto prompt theme 'powerlevel10k'
 
 zgen prezto 'syntax-highlighting' highlighters \
   'main' \
