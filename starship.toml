@@ -17,3 +17,6 @@ symbol = " "
 disabled = false
 format = " %T"
 utc_time_offset = -5
+
+[golang]
+symbol = "GO "
