@@ -28,7 +28,7 @@ let g:ale_fixers = {
 "}}}"
 Plug 'prettier/prettier'
 Plug 'skywind3000/asyncrun.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'fszymanski/fzf-quickfix'
 "{{{ 
@@ -57,7 +57,7 @@ Plug 'fszymanski/fzf-quickfix'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 Plug 'jparise/vim-graphql'
-Plug 'zchee/nvim-go', { 'do': 'make'}
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " Tools
 Plug 'vim-airline/vim-airline'
