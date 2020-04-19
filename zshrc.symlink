@@ -26,7 +26,6 @@ zgen prezto tmux
 zgen prezto fasd
 zgen prezto history-substring-search
 zgen prezto syntax-highlighting
-zgen prezto git
 zgen prezto gpg
 zgen prezto osx
 zgen prezto ssh
@@ -34,7 +33,6 @@ zgen prezto helper
 zgen prezto node
 zgen prezto homebrew
 
-zgen load lukechilds/zsh-nvm
 
 alias ci="code-insiders"
 alias em='open -a /Applications/Emacs.app $1'
@@ -88,10 +86,8 @@ export PATH=/usr/local/opt/python/libexec/bin:$PATH
 #
 export PATH="$HOME/.cargo/bin:$PATH"
 
-# NVM initialisation
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
+eval "$(fnm env --multi)"
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 #[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
