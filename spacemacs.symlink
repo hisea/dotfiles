@@ -103,7 +103,7 @@ before layers configuration."
    ;;                            :width normal
    ;;                            :powerline-scale 1.2)
 
-   dotspacemacs-default-font '("Operator Mono Lig"
+   dotspacemacs-default-font '("OperatorMonoLig Nerd Font"
            :size 15
            :weight normal
            :width normal
