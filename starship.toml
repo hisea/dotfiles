@@ -20,3 +20,11 @@ utc_time_offset = -5
 
 [golang]
 symbol = "GO "
+
+[aws]
+format = '[$symbol$profile(\($region\))]($style) '
+style = "bold blue"
+symbol = " "
+[aws.region_aliases]
+ap-southeast-2 = "au"
+us-east-1 = "va"
