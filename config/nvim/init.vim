@@ -31,7 +31,7 @@ Plug 'skywind3000/asyncrun.vim'
 Plug $BREW_DIR . '/opt/fzf/'
 Plug 'junegunn/fzf.vim'
 Plug 'fszymanski/fzf-quickfix'
-"{{{ 
+"{{{
   let g:fzf_layout = { 'down': '~30%' }
   let g:fzf_nvim_statusline = 0 " disable statusline overwriting
   let g:fzf_quickfix_use_loclist = 1
@@ -149,7 +149,7 @@ set termguicolors
 "colorscheme gruvbox
 colorscheme OceanicNext
 
-set fcs=eob:\ 
+set fcs=eob:\
 set background=dark    " Setting dark mode
 syntax enable
 filetype plugin indent on
@@ -204,7 +204,7 @@ hi CustomItalic gui=italic cterm=italic
 call matchadd('CustomItalic', '\<import\>')
 call matchadd('CustomItalic', '\<from\>')
 call matchadd('CustomItalic', '\<const\>')
-call matchadd('CustomItalic', '\<let\>') 
+call matchadd('CustomItalic', '\<let\>')
 call matchadd('CustomItalic', '\<async\>')
 call matchadd('CustomItalic', '\<await\>')
 
