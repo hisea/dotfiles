@@ -98,7 +98,7 @@ export PATH="$GOPATH/bin:$PATH"
 #
 export PATH="$HOME/.cargo/bin:$PATH"
 
-eval "$(fnm env)
+eval "$(fnm env)"
 
 export PATH=/usr/local/bin/:/home/linuxbrew/.linuxbrew/bin:$PATH
 export BREW_DIR=$(brew --prefix)
