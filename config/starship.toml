@@ -1,0 +1,30 @@
+[character]      # The name of the module we are confguring is "character"
+symbol = "❯"
+
+[git_branch]
+symbol = " "
+
+[package]
+symbol = " "
+
+[python]
+symbol = " "
+
+[ruby]
+symbol = " "
+
+[time]
+disabled = false
+format = " [$time]($style) "
+utc_time_offset = -5
+
+[golang]
+symbol = "GO "
+
+[aws]
+format = '[$symbol$profile(\($region\))]($style) '
+style = "bold blue"
+symbol = " "
+[aws.region_aliases]
+ap-southeast-2 = "au"
+us-east-1 = "va"
