@@ -72,6 +72,10 @@ alias ping="prettyping"
 alias help='tldr'
 alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
 
+export PATH=/usr/local/bin/:/home/linuxbrew/.linuxbrew/bin:$PATH
+export BREW_DIR=$(brew --prefix)
+export PATH=$BREW_DIR/bin:$PATH
+
 # export RBENV_ROOT=/usr/local/var/rbenv
 # export PATH="$HOME/.rbenv/bin:$PATH"
 # eval "$(rbenv init -)"
@@ -100,9 +104,6 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 eval "$(fnm env)"
 
-export PATH=/usr/local/bin/:/home/linuxbrew/.linuxbrew/bin:$PATH
-export BREW_DIR=$(brew --prefix)
-export PATH=$BREW_DIR/bin:$PATH
 
 eval "$(pyenv init -)"
 
