@@ -143,6 +143,8 @@ call plug#end()
 "  Basic Setup
 "
 
+set mmp=5000
+
 " Colorscheme
 set termguicolors
 "colorscheme jellybeans
