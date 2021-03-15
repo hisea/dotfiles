@@ -74,6 +74,7 @@ alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
 
 export PATH=/usr/local/bin/:/home/linuxbrew/.linuxbrew/bin:$PATH
 export BREW_DIR=$(brew --prefix)
+ eval "$($BREW_DIR/bin/brew shellenv)"
 export PATH=$BREW_DIR/bin:$PATH
 
 # export RBENV_ROOT=/usr/local/var/rbenv
@@ -87,6 +88,9 @@ eval "$(pyenv init -)"
 #export PATH="$HOME/.exenv/bin:$PATH"
 #eval "$(exenv init -)"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$BREW_DIR/opt/nvm/nvm.sh" ] && . "$BREW_DIR/opt/nvm/nvm.sh"  # This loads nvm
 
 export GOPATH="$HOME/Code/Go"
 export PATH="$GOPATH/bin:$PATH"
@@ -102,9 +106,7 @@ export PATH="$GOPATH/bin:$PATH"
 #
 export PATH="$HOME/.cargo/bin:$PATH"
 
-eval "$(fnm env)"
-
-
+# eval "$(fnm env)"
 eval "$(pyenv init -)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

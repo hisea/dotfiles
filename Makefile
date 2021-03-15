@@ -19,7 +19,7 @@ stow: brew
 	is-executable stow || brew install stow
 
 brew:
-	is-executable brew || curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh | bash
+	is-executable brew || curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | /bin/bash
 
 link:
 	for FILE in $$(\ls -A runcom); do if [ -f $(HOME)/$$FILE -a ! -h $(HOME)/$$FILE ]; then \
@@ -35,7 +35,7 @@ unlink:
 		mv -v $(HOME)/$$FILE.bak $(HOME)/$${FILE%%.bak}; fi; done
 
 npm:
-	fnm install --lts
+	nvm install --lts
 
 brew-install: brew
 	brew bundle --file=$(DOTFILES_DIR)/install/Brewfile
