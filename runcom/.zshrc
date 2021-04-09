@@ -89,8 +89,8 @@ eval "$(pyenv init -)"
 #eval "$(exenv init -)"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-  export NVM_DIR="$HOME/.nvm"
-  [ -s "$BREW_DIR/opt/nvm/nvm.sh" ] && . "$BREW_DIR/opt/nvm/nvm.sh"  # This loads nvm
+#  export NVM_DIR="$HOME/.nvm"
+#  [ -s "$BREW_DIR/opt/nvm/nvm.sh" ] && . "$BREW_DIR/opt/nvm/nvm.sh"  # This loads nvm
 
 export GOPATH="$HOME/Code/Go"
 export PATH="$GOPATH/bin:$PATH"
@@ -106,7 +106,7 @@ export PATH="$GOPATH/bin:$PATH"
 #
 export PATH="$HOME/.cargo/bin:$PATH"
 
-# eval "$(fnm env)"
+eval "$(fnm env)"
 eval "$(pyenv init -)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
