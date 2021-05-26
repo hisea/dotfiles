@@ -77,9 +77,7 @@ export BREW_DIR=$(brew --prefix)
  eval "$($BREW_DIR/bin/brew shellenv)"
 export PATH=$BREW_DIR/bin:$PATH
 
-# export RBENV_ROOT=/usr/local/var/rbenv
-# export PATH="$HOME/.rbenv/bin:$PATH"
-# eval "$(rbenv init -)"
+ eval "$(rbenv init -)"
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
