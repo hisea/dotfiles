@@ -81,7 +81,7 @@ export PATH=$BREW_DIR/bin:$PATH
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+eval "$(pyenv init --path)"
 
 #export PATH="$HOME/.exenv/bin:$PATH"
 #eval "$(exenv init -)"
@@ -105,7 +105,6 @@ export PATH="$GOPATH/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 eval "$(fnm env)"
-eval "$(pyenv init -)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(starship init zsh)"
