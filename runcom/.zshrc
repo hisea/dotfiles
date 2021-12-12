@@ -72,9 +72,9 @@ alias ping="prettyping"
 alias help='tldr'
 alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
 
-export PATH=/usr/local/bin/:/home/linuxbrew/.linuxbrew/bin:$PATH
+export PATH=/usr/local/bin/:/opt/homebrew/bin:/home/linuxbrew/.linuxbrew/bin:$PATH
 export BREW_DIR=$(brew --prefix)
- eval "$($BREW_DIR/bin/brew shellenv)"
+eval "$($BREW_DIR/bin/brew shellenv)"
 export PATH=$BREW_DIR/bin:$PATH
 
  eval "$(rbenv init -)"
