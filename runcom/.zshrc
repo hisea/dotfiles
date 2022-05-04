@@ -109,3 +109,4 @@ eval "$(fnm env)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(starship init zsh)"
 
+export PATH="/opt/homebrew/opt/scala@2.12/bin:$PATH"

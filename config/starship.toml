@@ -15,7 +15,7 @@ symbol = " "
 [time]
 disabled = false
 format = " [$time]($style) "
-utc_time_offset = -5
+utc_time_offset = "-5"
 
 [golang]
 symbol = "GO "
@@ -27,3 +27,6 @@ symbol = " "
 [aws.region_aliases]
 ap-southeast-2 = "au"
 us-east-1 = "va"
+
+[battery]
+disabled = "true"
