@@ -1,4 +1,3 @@
-export BRAZIL_WORKSPACE_DEFAULT_LAYOUT=short
 #git clone https://github.com/tarjoilija/zgen.git "${HOME}/.zgen"
 # load zgen
 source "${HOME}/.zgen/zgen.zsh"
