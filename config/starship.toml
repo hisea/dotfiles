@@ -29,4 +29,4 @@ ap-southeast-2 = "au"
 us-east-1 = "va"
 
 [battery]
-disabled = "true"
+disabled = true
