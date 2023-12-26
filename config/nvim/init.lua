@@ -24,7 +24,37 @@ require("lazy").setup({
   'hrsh7th/nvim-cmp',
   'mfussenegger/nvim-dap',
   'nvim-lua/plenary.nvim',
+  'folke/trouble.nvim',
+  'todo-comments.nvim',
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {
+      -- add any options here
+    },
+    dependencies = {
+      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+      "MunifTanjim/nui.nvim",
+      -- OPTIONAL:
+      --   `nvim-notify` is only needed, if you want to use the notification view.
+      --   If not available, we use `mini` as the fallback
+      "rcarriga/nvim-notify",
+    }
+  },
   {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    init = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+    end,
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
+  },
   {
     "L3MON4D3/LuaSnip",
     -- follow latest release.
@@ -143,6 +173,25 @@ rt.setup({
   }
 })
 
+require("noice").setup({
+  lsp = {
+    -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
+    override = {
+      ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+      ["vim.lsp.util.stylize_markdown"] = true,
+      ["cmp.entry.get_documentation"] = true,
+    },
+  },
+  -- you can enable a preset for easier configuration
+  presets = {
+    bottom_search = true, -- use a classic bottom cmdline for search
+    command_palette = true, -- position the cmdline and popupmenu together
+    long_message_to_split = true, -- long messages will be sent to a split
+    inc_rename = false, -- enables an input dialog for inc-rename.nvim
+    lsp_doc_border = false, -- add a border to hover docs and signature help
+  },
+})
+
 local cmp = require'cmp'
 cmp.setup({
   snippet = {
@@ -180,43 +229,6 @@ cmp.setup({
 vim.cmd 'colorscheme OceanicNext'
 
 -- Basic Settings
-vim.opt.spelllang=en,cjk
-vim.opt.termguicolors = true
-vim.opt.background = "dark"
-vim.opt.syntax = "on"
-vim.opt.encoding = "utf-8"
-vim.opt.showtabline = 2
-vim.opt.linespace = 2
-vim.opt.backup = false
-vim.opt.swapfile = false
-vim.opt.fcs = "eob: "
-vim.opt.filetype = "on"
-vim.opt.number = true
-vim.opt.autoindent = true
-vim.opt.ruler = true
-vim.opt.laststatus = 2
-vim.opt.showcmd = true
-vim.opt.hidden = true
-vim.opt.showmatch = true
-vim.opt.smarttab = true
-vim.opt.visualbell = true
-vim.opt.smartindent = true
-vim.opt.shell = "zsh"
-
--- Whitespace
-vim.opt.wrap = false
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.expandtab = true
-vim.opt.list = true
-vim.opt.backspace = "indent,eol,start"
-
-vim.opt.listchars = {
-  tab = "  ",
-  trail = ".",
-  extends = ">",
-  precedes = "<",
-}
 
 vim.cmd [[
   "" Searching
@@ -256,3 +268,5 @@ vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+
+require('options')
