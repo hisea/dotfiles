@@ -1,3 +1,5 @@
+require('git-worktree').setup()
+
 require('gitsigns').setup {
   signs = {
     add = { text = '+' },

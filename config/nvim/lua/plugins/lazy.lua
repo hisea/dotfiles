@@ -77,6 +77,7 @@ require("lazy").setup({
       -- refer to the configuration section below
     }
   },
+  "rcarriga/nvim-notify",
   {
     "folke/noice.nvim",
     event = "VeryLazy",
@@ -127,6 +128,7 @@ require("lazy").setup({
 
   --Fuzzy Finder
   'ThePrimeagen/harpoon',
+  'ThePrimeagen/git-worktree.nvim',
   {'nvim-telescope/telescope.nvim', tag = '0.1.5',
     dependencies = { 'nvim-lua/plenary.nvim' }
   },
