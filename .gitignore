@@ -1,3 +1,4 @@
 .bundle/
 config/nvim/plugged/
 vendor/
+.DS_Store
