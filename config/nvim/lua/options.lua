@@ -1,4 +1,8 @@
 
+-- Colorscheme
+vim.cmd.colorscheme "OceanicNext"
+-- vim.cmd.colorscheme "catppuccin-macchiato"  -- catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
+
 vim.opt.spelllang=en,cjk
 vim.opt.termguicolors = true
 vim.opt.background = "dark"
@@ -38,3 +42,9 @@ vim.opt.listchars = {
   extends = ">",
   precedes = "<",
 }
+
+-- Set highlight on search
+vim.o.hlsearch = true
+-- Case insensitive searching UNLESS /C or capital in search
+vim.o.ignorecase = true
+vim.o.smartcase = true
