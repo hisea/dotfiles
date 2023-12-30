@@ -14,7 +14,7 @@ return  {
   },
   config = function()
     require("notify").setup({
-      timeout = 3000,
+      timeout = 2000,
       stages = "static"
     })
 

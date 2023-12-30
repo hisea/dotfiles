@@ -1,14 +1,3 @@
-function map(mode, shortcut, command)
-  vim.api.nvim_set_keymap(mode, shortcut, command, { noremap = true, silent = true })
-end
+local keymap = vim.keymap
 
-function nmap(shortcut, command)
-  map('n', shortcut, command)
-end
-
-function imap(shortcut, command)
-  map('i', shortcut, command)
-end
-
-nmap("<leader>nt", ":NvimTreeToggle<CR>")
-nmap("<leader>w", "<c-w>")
+keymap.set("n","<leader>w", "<c-w>")
