@@ -1,3 +1,3 @@
 require("keymaps")
-require("load_lazy")
 require("options")
+require("load_lazy")
