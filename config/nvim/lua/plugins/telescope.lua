@@ -3,10 +3,17 @@ return {
   'ThePrimeagen/git-worktree.nvim',
   {
     'nvim-telescope/telescope.nvim',
-    dependencies = { 'nvim-lua/plenary.nvim' },
+    dependencies = { 'nvim-lua/plenary.nvim',
+      {
+        "nvim-telescope/telescope-fzf-native.nvim",
+        build = "make",
+        enabled = vim.fn.executable("make") == 1,
+      },
+    },
     config = function()
       require('telescope').load_extension('harpoon')
       require('telescope').load_extension('git_worktree')
+      require("telescope").load_extension("fzf")
 
       -- [[ Configure Telescope ]]
       -- See `:help telescope` and `:help telescope.setup()`
