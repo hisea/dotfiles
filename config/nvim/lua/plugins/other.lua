@@ -1,6 +1,5 @@
 return {
   "folke/neodev.nvim",
-  'folke/trouble.nvim',
   'todo-comments.nvim',
   { "folke/neoconf.nvim", cmd = "Neoconf" },
   {

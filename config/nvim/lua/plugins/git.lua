@@ -11,6 +11,9 @@
       -- Only one of these is needed, not both.
       "nvim-telescope/telescope.nvim", -- optional
     },
+    keys = {
+      {"<leader>gg", "<cmd>Neogit<cr>", { desc = "Neogit Status" } }                   -- optional
+    },
     config = true
   }
 }
