@@ -11,6 +11,9 @@ export STOW_DIR := $(DOTFILES_DIR)
 zgen:
 	git clone https://github.com/tarjoilija/zgen.git "${HOME}/.zgen"
 
+tpm: 
+	git clone https://github.com/tmux-plugins/tpm "${HOME}/.tmux/plugins/tpm"
+
 stow: brew
 	is-executable stow || brew install stow
 
@@ -29,9 +32,6 @@ unlink:
 	stow --delete -t $(XDG_CONFIG_HOME) config
 	for FILE in $$(\ls -A runcom); do if [ -f $(HOME)/$$FILE.bak ]; then \
 		mv -v $(HOME)/$$FILE.bak $(HOME)/$${FILE%%.bak}; fi; done
-
-npm:
-	nvm install --lts
 
 brew-install: brew
 	brew bundle --file=$(DOTFILES_DIR)/install/Brewfile

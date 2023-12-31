@@ -61,7 +61,7 @@ return {
       },
     },
   },
-  config = function()
+  config = function(_,opts)
     require("neo-tree").setup(opts)
   end,
 }

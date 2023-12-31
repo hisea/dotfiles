@@ -1,7 +1,15 @@
+-- return {
+--   "roflolilolmao/oceanic-next.nvim",
+--   priority = 1000 ,
+--   config = function()
+--     vim.cmd.colorscheme "OceanicNext"
+--   end
+-- }
 return {
-  "roflolilolmao/oceanic-next.nvim",
-  priority = 1000 ,
+  "catppuccin/nvim",
+  name = "catppuccin",
+  priority = 1000,
   config = function()
-    vim.cmd.colorscheme "OceanicNext"
+    vim.cmd.colorscheme "catppuccin-mocha"
   end
 }

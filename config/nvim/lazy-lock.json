@@ -18,6 +18,7 @@
   "mason-lspconfig.nvim": { "branch": "main", "commit": "56e435e09f8729af2d41973e81a0db440f8fe9c9" },
   "mason-null-ls.nvim": { "branch": "main", "commit": "d1f7258f80867f718d643d88eee66959671a4bef" },
   "mason.nvim": { "branch": "main", "commit": "a09da6ac634926a299dd439da08bdb547a8ca011" },
+  "mini.bufremove": { "branch": "main", "commit": "020243bfed8c8b941f2c20626faf3ea39c0c0e1b" },
   "neo-tree.nvim": { "branch": "v3.x", "commit": "77d9f484b88fd380386b46ed9206e5374d69d9d8" },
   "neoconf.nvim": { "branch": "main", "commit": "64437787dba70fce50dad7bfbb97d184c5bc340f" },
   "neodev.nvim": { "branch": "main", "commit": "7cb4f7f29c6bf6f1d21a37f6dd6d12ba64266b09" },
@@ -35,10 +36,10 @@
   "nvim-treesitter": { "branch": "master", "commit": "e49f1e8ef3e8450a8446cb1f2bbb53c919f60b6d" },
   "nvim-treesitter-textobjects": { "branch": "master", "commit": "0e2d5bd4cbe75849a013901555d436a48c6680cb" },
   "nvim-web-devicons": { "branch": "master", "commit": "cff25ce621e6d15fae0b0bfe38c00be50ce38468" },
-  "oceanic-next.nvim": { "branch": "main", "commit": "374cb9cd0c72f65f9c1ace5273d16c16fdff3e5c" },
   "plenary.nvim": { "branch": "master", "commit": "55d9fe89e33efd26f532ef20223e5f9430c8b0c0" },
   "rust-tools.nvim": { "branch": "master", "commit": "0cc8adab23117783a0292a0c8a2fbed1005dc645" },
   "telescope.nvim": { "branch": "master", "commit": "3466159b0fcc1876483f6f53587562628664d850" },
+  "trim.nvim": { "branch": "master", "commit": "629b96a303a3a0bb5fd050e6cd9d627ca7831cc7" },
   "trouble.nvim": { "branch": "main", "commit": "f1168feada93c0154ede4d1fe9183bf69bac54ea" },
   "which-key.nvim": { "branch": "main", "commit": "4433e5ec9a507e5097571ed55c02ea9658fb268a" }
 }
