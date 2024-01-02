@@ -76,7 +76,7 @@ export BREW_DIR=$(brew --prefix)
 eval "$($BREW_DIR/bin/brew shellenv)"
 export PATH=$BREW_DIR/bin:$PATH
 
- eval "$(rbenv init -)"
+[[ -x /opt/homebrew/bin/rbenv ]] && eval "$(rbenv init -)"
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
@@ -86,8 +86,8 @@ eval "$(pyenv init --path)"
 #eval "$(exenv init -)"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-#  export NVM_DIR="$HOME/.nvm"
-#  [ -s "$BREW_DIR/opt/nvm/nvm.sh" ] && . "$BREW_DIR/opt/nvm/nvm.sh"  # This loads nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$BREW_DIR/opt/nvm/nvm.sh" ] && . "$BREW_DIR/opt/nvm/nvm.sh"  # This loads nvm
 
 export GOPATH="$HOME/Code/Go"
 export PATH="$GOPATH/bin:$PATH"
@@ -103,9 +103,18 @@ export PATH="$GOPATH/bin:$PATH"
 #
 export PATH="$HOME/.cargo/bin:$PATH"
 
-eval "$(fnm env)"
+[[ -x /opt/homebrew/bin/fnm ]] && eval "$(fnm env)"
+
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-eval "$(starship init zsh)"
+[[ -x /opt/homebrew/bin/starship ]] && eval "$(starship init zsh)"
+
+[ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
+
+[[ -f /opt/dev/sh/chruby/chruby.sh ]] && { type chruby >/dev/null 2>&1 || chruby () { source /opt/dev/sh/chruby/chruby.sh; chruby "$@"; } }
 
 export PATH="/opt/homebrew/opt/scala@2.12/bin:$PATH"
+[[ -x /opt/homebrew/bin/brew ]] && eval $(/opt/homebrew/bin/brew shellenv)
+
+# Created by `pipx` on 2023-06-07 17:50:45
+export PATH="$PATH:/Users/yinghaizhao/.local/bin"
