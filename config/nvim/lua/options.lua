@@ -1,10 +1,10 @@
-
 -- Colorscheme
 -- vim.cmd.colorscheme "catppuccin-macchiato"  -- catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 
 vim.opt.termguicolors = true
 
-vim.opt.spelllang=en,cjk
+vim.opt.spell = true
+vim.opt.spelllang="en,cjk"
 vim.opt.termguicolors = true
 vim.opt.background = "dark"
 vim.opt.syntax = "on"
