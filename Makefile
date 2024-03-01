@@ -8,8 +8,6 @@ export STOW_DIR := $(DOTFILES_DIR)
 
 .PHONY: test
 
-zgen:
-	git clone https://github.com/tarjoilija/zgen.git "${HOME}/.zgen"
 
 tpm: 
 	git clone https://github.com/tmux-plugins/tpm "${HOME}/.tmux/plugins/tpm"
