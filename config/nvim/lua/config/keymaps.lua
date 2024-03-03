@@ -1,3 +1,26 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
+--
+local dap = require("dap")
+vim.keymap.set("n", "<F5>", function()
+  dap.continue()
+end)
+vim.keymap.set("n", "<F10>", function()
+  dap.step_over()
+end)
+vim.keymap.set("n", "<F11>", function()
+  dap.step_into()
+end)
+vim.keymap.set("n", "<F12>", function()
+  dap.step_out()
+end)
+vim.keymap.set("n", "<Leader>Db", function()
+  dap.toggle_breakpoint()
+end)
+vim.keymap.set("n", "<Leader>Dl", function()
+  dap.run_last()
+end)
+vim.keymap.set("n", "<Leader>Df", function()
+  require("dapui").float_element("scopes", { enter = true })
+end)
