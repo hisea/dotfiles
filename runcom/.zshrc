@@ -29,8 +29,8 @@ eval "$(pyenv init --path)"
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$BREW_DIR/opt/nvm/nvm.sh" ] && . "$BREW_DIR/opt/nvm/nvm.sh"  # This loads nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$BREW_DIR/opt/nvm/nvm.sh" ] && . "$BREW_DIR/opt/nvm/nvm.sh"  # This loads nvm
 
 [[ -x /opt/homebrew/bin/fnm ]] && eval "$(fnm env)"
 
