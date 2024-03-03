@@ -5,5 +5,6 @@ return {
     -- table.insert(opts.options, { section_separators = { left = "", right = "" } })
     opts["options"]["section_separators"] = { left = "", right = "" }
     opts["options"]["component_separators"] = { left = "", right = "" }
+    opts["options"]["theme"] = "OceanicNext"
   end,
 }
