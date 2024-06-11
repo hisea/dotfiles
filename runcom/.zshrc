@@ -41,5 +41,7 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="/opt/homebrew/opt/scala@2.12/bin:$PATH"
 [[ -x /opt/homebrew/bin/brew ]] && eval $(/opt/homebrew/bin/brew shellenv)
 
+# PATH for VS Code command
+export PATH="$PATH:/usr/local/bin"
 # Created by `pipx` on 2023-06-07 17:50:45
 export PATH="$PATH:/Users/yinghaizhao/.local/bin"
