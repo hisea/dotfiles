@@ -5,6 +5,7 @@ eval "$($BREW_DIR/bin/brew shellenv)"
 export GOPATH="$HOME/Code/Go"
 export PATH="$GOPATH/bin:$PATH"
 export PATH=.cargo/bin/:$PATH
+export GEM_HOME="$HOME/.gems"
 
 eval "$(sheldon source)"
 
@@ -32,7 +33,7 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$BREW_DIR/opt/nvm/nvm.sh" ] && . "$BREW_DIR/opt/nvm/nvm.sh"  # This loads nvm
 
-[[ -x /opt/homebrew/bin/fnm ]] && eval "$(fnm env)"
+# [[ -x /opt/homebrew/bin/fnm ]] && eval "$(fnm env)"
 
 [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
 
@@ -44,4 +45,6 @@ export PATH="/opt/homebrew/opt/scala@2.12/bin:$PATH"
 # PATH for VS Code command
 export PATH="$PATH:/usr/local/bin"
 # Created by `pipx` on 2023-06-07 17:50:45
-export PATH="$PATH:/Users/yinghaizhao/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
