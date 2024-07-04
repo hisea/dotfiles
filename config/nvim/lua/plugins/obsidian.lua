@@ -10,6 +10,13 @@ return {
   --   "BufReadPre path/to/my-vault/**.md",
   --   "BufNewFile path/to/my-vault/**.md",
   -- },
+  keys = {
+    -- change a keymap
+    { "<leader>ot", "<cmd>ObsidianToday<cr>", desc = "Obsidian Today" },
+    { "<leader>od", "<cmd>ObsidianDailies<cr>", desc = "Obsidian Dailies" },
+    { "<leader>sO", "<cmd>ObsidianSearch<cr>", desc = "Obsidian Search" },
+    { "<leader>on", "<cmd>ObsidianNew<cr>", desc = "Obsidian New" },
+  },
   cmd = {
     "ObsidianOpen",
     "ObsidianNew",
@@ -38,7 +45,7 @@ return {
     workspaces = {
       {
         name = "personal",
-        path = "~/iCloud/obvault",
+        path = "~/obvault",
       },
     },
 
@@ -48,6 +55,30 @@ return {
       nvim_cmp = true,
       -- Trigger completion at 2 chars.
       min_chars = 2,
+    },
+
+    daily_notes = {
+      -- Optional, if you keep daily notes in a separate directory.
+      folder = "dailies/",
+      -- Optional, if you want to change the date format for the ID of daily notes.
+      date_format = "%Y-%m-%d",
+      -- Optional, if you want to change the date format of the default alias of daily notes.
+      alias_format = "%B %-d, %Y",
+      -- Optional, default tags to add to each new daily note created.
+      default_tags = { "daily-notes" },
+      -- Optional, if you want to automatically insert a template from your template directory like 'daily.md'
+      template = "daily",
+    },
+
+    templates = {
+      folder = "templates",
+      date_format = "%Y-%m-%d-%a",
+      time_format = "%H:%M",
+      substitutions = {
+        yesterday = function()
+          return os.date("%Y-%m-%d", os.time() - 86400)
+        end,
+      },
     },
 
     mappings = {
@@ -75,6 +106,7 @@ return {
     },
 
     -- see below for full list of options 👇
+    --
   },
   config = function(_, opts)
     require("obsidian").setup(opts)
