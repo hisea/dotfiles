@@ -46,5 +46,9 @@ export PATH="/opt/homebrew/opt/scala@2.12/bin:$PATH"
 export PATH="$PATH:/usr/local/bin"
 # Created by `pipx` on 2023-06-07 17:50:45
 export PATH="$PATH:$HOME/.local/bin"
+eval "$(rbenv init - --no-rehash zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/hai/.lmstudio/bin"
