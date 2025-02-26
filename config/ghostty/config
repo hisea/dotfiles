@@ -1,0 +1,8 @@
+font-family="JetBrainsMono Nerd Font Mono"
+font-size=14
+theme=kanagawabones
+clipboard-read=allow
+clipboard-write=allow
+copy-on-select=true
+background-opacity=0.96
+#custom-shader=shaders/galaxy.glsl
