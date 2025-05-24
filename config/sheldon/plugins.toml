@@ -41,7 +41,7 @@ inline = 'type brew &>/dev/null && FPATH="$(brew --prefix)/share/zsh/site-functi
 github = "Aloxaf/fzf-tab"
 
 [plugins.fzf-zsh]
-github="unixorn/fzf-zsh-plugin"
+github = "unixorn/fzf-zsh-plugin"
 
 [plugins.titles]
 github = "amyreese/zsh-titles"
