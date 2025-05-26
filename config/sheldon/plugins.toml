@@ -49,6 +49,11 @@ github = "amyreese/zsh-titles"
 [plugins.rust-zsh-completions]
 github = "ryutok/rust-zsh-completions"
 
+[plugins.fzf-git]
+github = "junegunn/fzf-git.sh"
+use = ["*.sh"]
+apply = ["source"]
+
 [plugins.starship]
 inline = 'eval "$(starship init zsh)"'
 
