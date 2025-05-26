@@ -48,9 +48,20 @@ eval "$(pyenv init --path)"
 export PATH="$PATH:/usr/local/bin"
 # Created by `pipx` on 2023-06-07 17:50:45
 export PATH="$PATH:$HOME/.local/bin"
-eval "$(rbenv init - --no-rehash zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#
+export FZF_DEFAULT_OPTS="--layout=reverse --info=inline --height=80% --multi --preview-window=':hidden' 
+--color='hl:148,hl+:154,pointer:032,marker:010,bg+:237,gutter:008'
+--bind '?:toggle-preview'
+--bind 'ctrl-a:select-all'
+--bind 'ctrl-e:execute(vim {+} >/dev/tty)'
+--bind 'ctrl-v:execute(code {+})'
+--bind 'ctrl-y:execute-silent(echo {+} | pbcopy)'"
+
 
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/hai/.lmstudio/bin"
+
+# cloudplatform: add Shopify clusters to your local kubernetes config
+export KUBECONFIG=${KUBECONFIG:+$KUBECONFIG:}/Users/yinghaizhao/.kube/config:/Users/yinghaizhao/.kube/config.shopify.cloudplatform
