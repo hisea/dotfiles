@@ -63,6 +63,11 @@ inline = "autoload -Uz compinit && zsh-defer compinit"
 [plugins.zoxide]
 inline = 'eval "$(zoxide init zsh)"'
 
+[plugins.fzf-config]
+local = "~/.config/zsh-local/"
+use = ["*.zsh"]
+apply = ["source"]
+
 # For example:
 #
 # [plugins.base16]
