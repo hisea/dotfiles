@@ -1,5 +1,5 @@
 #
-export FZF_DEFAULT_OPTS="--layout=reverse --info=inline --height=80% --multi --preview-window=':hidden'
+export FZF_DEFAULT_OPTS="--layout=reverse --info=inline --multi --preview-window=':hidden'
 --color='hl:148,hl+:154,pointer:032,marker:010,bg+:237,gutter:008'
 --bind '?:toggle-preview'
 --bind 'ctrl-a:select-all'

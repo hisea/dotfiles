@@ -68,6 +68,9 @@ local = "~/.config/zsh-local/"
 use = ["*.zsh"]
 apply = ["source"]
 
+[plugins.zshfzf]
+inline = 'source <(fzf --zsh)'
+
 # For example:
 #
 # [plugins.base16]
