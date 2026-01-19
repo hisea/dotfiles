@@ -56,3 +56,10 @@ export PATH="$PATH:/Users/hai/.lmstudio/bin"
 
 # cloudplatform: add Shopify clusters to your local kubernetes config
 export KUBECONFIG=${KUBECONFIG:+$KUBECONFIG:}/Users/yinghaizhao/.kube/config:/Users/yinghaizhao/.kube/config.shopify.cloudplatform
+
+# bun completions
+[ -s "/Users/hai/.bun/_bun" ] && source "/Users/hai/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
