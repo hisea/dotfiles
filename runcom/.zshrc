@@ -63,3 +63,18 @@ export KUBECONFIG=${KUBECONFIG:+$KUBECONFIG:}/Users/yinghaizhao/.kube/config:/Us
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/Users/hai/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# OpenClaw Completion
+source "/Users/hai/.openclaw/completions/openclaw.zsh"
