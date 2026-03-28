@@ -37,6 +37,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
 
 [[ -f /opt/dev/sh/chruby/chruby.sh ]] && { type chruby >/dev/null 2>&1 || chruby () { source /opt/dev/sh/chruby/chruby.sh; chruby "$@"; } }
+[[ -f /opt/homebrew/opt/chruby/share/chruby/chruby.sh ]] && source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
 
 # PATH for VS Code command
 export PATH="$PATH:/usr/local/bin"
