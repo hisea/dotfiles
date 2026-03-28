@@ -5,5 +5,13 @@ theme=kanagawabones
 clipboard-read=allow
 clipboard-write=allow
 copy-on-select=true
-background-opacity=0.96
+
+background-opacity=0.95
+background-blur = true
+cursor-opacity = 1
+window-padding-x = 9
+
+keybind = alt+backspace=text:\x1b\x7f
+keybind = shift+enter=text:\n
+
 #custom-shader=shaders/galaxy.glsl

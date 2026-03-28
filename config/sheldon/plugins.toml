@@ -60,9 +60,6 @@ inline = 'eval "$(starship init zsh)"'
 [plugins.compinit]
 inline = "autoload -Uz compinit && zsh-defer compinit"
 
-[plugins.zoxide]
-inline = 'eval "$(zoxide init zsh)"'
-
 [plugins.fzf-config]
 local = "~/.config/zsh-local/"
 use = ["*.zsh"]

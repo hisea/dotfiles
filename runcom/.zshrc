@@ -27,8 +27,6 @@ alias ping="prettyping"
 alias help='tldr'
 alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
 
-
-
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 export NVM_DIR="$HOME/.nvm"
@@ -39,12 +37,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
 
 [[ -f /opt/dev/sh/chruby/chruby.sh ]] && { type chruby >/dev/null 2>&1 || chruby () { source /opt/dev/sh/chruby/chruby.sh; chruby "$@"; } }
-
-[[ -x /opt/homebrew/bin/brew ]] && eval $(/opt/homebrew/bin/brew shellenv)
-
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
 
 # PATH for VS Code command
 export PATH="$PATH:/usr/local/bin"
@@ -61,10 +53,6 @@ export KUBECONFIG=${KUBECONFIG:+$KUBECONFIG:}/Users/yinghaizhao/.kube/config:/Us
 
 # bun completions
 [ -s "/Users/hai/.bun/_bun" ] && source "/Users/hai/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
 
 # pnpm
 export PNPM_HOME="/Users/hai/Library/pnpm"
