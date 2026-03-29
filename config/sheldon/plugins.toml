@@ -54,6 +54,12 @@ github = "junegunn/fzf-git.sh"
 use = ["*.sh"]
 apply = ["source"]
 
+[plugins.fnm]
+inline = 'eval "$(fnm env --use-on-cd)"'
+
+[plugins.fnm-completions]
+inline = 'source <(fnm completions --shell zsh)'
+
 [plugins.starship]
 inline = 'eval "$(starship init zsh)"'
 
