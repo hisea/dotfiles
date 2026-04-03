@@ -1,5 +1,6 @@
 autoload -U +X compinit && compinit
 
+set -o emacs
 export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:$PATH
 export BREW_DIR=$(brew --prefix)
 eval "$($BREW_DIR/bin/brew shellenv)"
