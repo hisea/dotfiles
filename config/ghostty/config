@@ -11,6 +11,4 @@ background-blur = true
 cursor-opacity = 1
 window-padding-x = 8
 
-keybind = shift+enter=text:\x1b\r
-
 #custom-shader=shaders/galaxy.glsl
