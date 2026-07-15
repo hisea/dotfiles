@@ -1,3 +1,10 @@
 onboarding = false
 [keys]
 prefix = "ctrl+a"
+
+[theme]
+name = "kanagawa"
+auto_switch = false
+
+[ui.toast]
+delivery = "herdr"
